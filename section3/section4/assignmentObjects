@@ -1,0 +1,30 @@
+
+var restaurantMenu = {
+  name: "Paradise restaurant",
+  menuItems : [
+    {name: 'Chicken Biryani', price: 150},
+    {name:'chicken65', price: 180},
+    {name:'chicken kebab', price: 160},
+    {name:'Mutton Biryani', price: 200},
+    {name:'Veg Biryani', price: 150}
+    ],
+  ListOut  : function() {
+    for (item of this.menuItems) {
+         alert(item.name + " - Rs:" + item.price);  
+        }
+        this.promptUser();
+      },
+  promptUser  : function() {
+    var userChoice = prompt('which you like order ?').toLowerCase();
+    for (item of this.menuItems) {
+         if(item.name.toLowerCase() == userChoice){
+            alert('You ordered: ' +userChoice);
+            return false;
+         } else{
+                alert('sorry we are not serving this');
+                return false;
+            } 
+        }
+}
+}
+restaurantMenu.ListOut();
